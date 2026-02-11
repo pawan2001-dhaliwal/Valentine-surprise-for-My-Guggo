@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine Surprise ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b0b0b 0%, #1a1a2e 100%);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 40px;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #ff4d88;
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in;
+        }
+
+        p {
+            font-size: 20px;
+            color: #ffd1dc;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in 0.2s both;
+        }
+
+        .btn-container {
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: #ff4d88;
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease-in 0.4s both;
+        }
+
+        button:hover {
+            background: #ff1463;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 77, 136, 0.4);
+        }
+
+        /* Floating hearts background */
+        .heart {
+            position: fixed;
+            animation: float 6s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey My Guggo ❤️</h1>
+        <p>I made something special for you...</p>
+        <div class="btn-container">
+            <button onclick="window.location.href='valentine.html'">
+                Open My Surprise 🎁
+            </button>
+        </div>
+    </div>
+
+    <script>
+        /* Floating hearts animation */
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.className = "heart";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.fontSize = (15 + Math.random() * 25) + "px";
+                heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+                heart.style.animationDelay = (Math.random() * 2) + "s";
+                document.body.appendChild(heart);
+            }
+        }
+        createHearts();
+    </script>
+</body>
+</html>
